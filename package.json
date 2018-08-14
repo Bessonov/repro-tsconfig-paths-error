@@ -1,0 +1,25 @@
+{
+  "name": "mysql-repro",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "case1": "node -r tsconfig-paths/register -r ts-node/register mysql.ts",
+    "case2": "node -r tsconfig-paths/register -r ts-node/register typeorm.ts",
+    "case3": "node -r ts-node/register mysql.ts",
+    "case4": "npm rm typeorm; node -r tsconfig-paths/register -r ts-node/register mysql.ts",
+    "case5": "npm rm mysql @types/mysql; npm i typeorm mysql@2.13.0; node -r tsconfig-paths/register -r ts-node/register typeorm.ts"
+  },
+  "author": "",
+  "license": "free",
+  "devDependencies": {
+    "@types/mysql": "2.15.5",
+    "ts-node": "7.0.1",
+    "tsconfig-paths": "3.5.0",
+    "typescript": "3.0.1"
+  },
+  "dependencies": {
+    "mysql": "github:mysqljs/mysql",
+    "typeorm": "0.2.7"
+  }
+}
